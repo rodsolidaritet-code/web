@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rød Solidaritet | Et liv som er værd at leve</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rs-oxblood: #743636; 
+            --rs-white: #ffffff;
+            --rs-bg: #fdfaf7;
+            --rs-text: #2c2c2c;
+            --rs-text-light: #555555;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--rs-bg); 
+            color: var(--rs-text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigering */
+        nav {
+            background: var(--rs-oxblood);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo { 
+            color: white; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .nav-link {
+            background: white;
+            color: var(--rs-oxblood);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover { 
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Hero / Overskrift */
+        header {
+            background: var(--rs-oxblood);
+            color: white;
+            padding: 140px 20px 180px;
+            text-align: center;
+        }
+
+        header h1 { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            margin-bottom: 10px;
+        }
+
+        .tagline { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem; 
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0.95;
+        }
+
+        /* Video Sektion */
+        .video-section {
+            max-width: 900px;
+            margin: -120px auto 80px;
+            padding: 0 20px;
+        }
+
+        .video-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* Introduktion */
+        .intro-container {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-container p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--rs-oxblood);
+        }
+
+        /* Værdier - Grid med mere luft */
+        .values-section {
+            max-width: 1200px;
+            margin: 0 auto 120px;
+            padding: 0 40px;
+        }
+
+        .values-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 80px;
+            font-weight: 900;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            column-gap: 60px; /* Mere luft mellem kolonner */
+            row-gap: 80px;    /* Mere luft mellem rækker */
+        }
+
+        .card {
+            padding-left: 35px;
+            border-left: 3px solid var(--rs-oxblood);
+        }
+
+        .card h3 { 
+            font-family: 'Montserrat', sans-serif;
+            color: var(--rs-oxblood); 
+            margin-bottom: 20px; 
+            font-size: 1.8rem; 
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: var(--rs-text-light);
+        }
+
+        /* CTA Sektion */
+        .cta-box {
+            background: var(--rs-oxblood);
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .cta-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--rs-oxblood);
+            padding: 22px 50px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 40px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-button:hover { 
+            background: #f4f4f4;
+            transform: scale(1.03);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #666;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobil-optimering */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.8rem; }
+            .tagline { font-size: 1.4rem; }
+            .values-section h2 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; row-gap: 50px; }
+            .cta-box h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Rød Solidaritet</div>
+        <a href="https://www.vaelgererklaering.dk/om-partiet?election=dk&party=b6305d90-8dc9-4ac2-b447-b516659fc4dd" class="nav-link">Giv din støtte</a>
+    </nav>
+
+    <header>
+        <h1>Rød Solidaritet</h1>
+        <div class="tagline">Et liv som er værd at leve</div>
+    </header>
+
+    <section class="video-section">
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://youtu.be/OjNpRbNdR7E?si=pRr-XlwTrOZrvpBv" title="Introduktion til Rød Solidaritet" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-container">
+        <p>Vi skal ledes som et fællesskab, hvor hvert menneskes fundament er sikret. Staten skal yde goderne, så vi kan fokusere på at leve, opleve og skabe bånd til hinanden.</p>
+    </section>
+
+    <section class="values-section">
+        <h2>Hvordan vi skaber et værdigt samfund</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>30-timers arbejdsuge</h3>
+                <p>Frihed til at leve, ikke blot yde. Vi skal væk fra stresskulturen og give tid tilbage til borgerne. En kortere arbejdsuge gavner både sundhed og beskæftigelse.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Frihed</h3>
+                <p>Vi kæmper for et frit internet uden statslig overvågning. Danmark skal udvikle sine egne systemer, så vi ikke er prisgivet globale tech-monopoler.</p>
+            </div>
+            <div class="card">
+                <h3>Systemisk Klimaansvar</h3>
+                <p>Klimaet må ikke være borgerens byrde alene. Vi omstiller landbruget til andelsmodeller og tvinger industrien til at bære det tunge ansvar for vores planet.</p>
+            </div>
+            <div class="card">
+                <h3>Værdig Velfærd</h3>
+                <p>Gratis lægehjælp, uddannelse og effektiv offentlig transport skal være en ret for alle – uanset om du bor i storbyen eller i yderområderne.</p>
+            </div>
+            <div class="card">
+                <h3>Tryghed & Konsekvens</h3>
+                <p>Vi prioriterer rehabilitering, men vi trækker en hård grænse ved grov vold. Vi beskytter borgerens sikkerhed gennem et retssystem med klare rammer.</p>
+            </div>
+            <div class="card">
+                <h3>Stærke Fagforeninger</h3>
+                <p>Vi styrker lønmodtagernes rettigheder. Ved at regulere markedet sikrer vi, at uligheden ikke vokser, og at ingen bliver efterladt på bunden.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-box">
+        <h2>Klar til forandring?</h2>
+        <p>Hver vælgererklæring bringer os tættere på et Danmark for mennesket.</p>
+        <a href="https://www.vaelgererklaering.dk/om-partiet?election=dk&party=b6305d90-8dc9-4ac2-b447-b516659fc4dd" class="cta-button">Giv din vælgererklæring her</a>
+    </section>
+
+    <footer>
+        <p>Rød Solidaritet &copy; 2026<br>Et samfund bygget på tillid, natur og frihed.</p>
+    </footer>
+
+</body>
+</html>
